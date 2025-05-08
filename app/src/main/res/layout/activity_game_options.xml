@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4">
+
+    <ImageView
+        android:id="@+id/myyImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/kelime_oyunu_image"
+        android:alpha="0.6"
+        android:scaleType="centerCrop" />
+
+    <!-- Sayfa Başlığı -->
+    <TextView
+        android:id="@+id/gameOptionsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Oyun Süresi Seçin"
+        android:textColor="#2C3E50"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Süre Seçenekleri -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Hızlı Oyun Başlığı -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hızlı Oyun"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- 2 Dakika -->
+        <Button
+            android:id="@+id/quickGame2MinButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/btn_style"
+            android:text="2 Dakika"
+            android:textColor="#fff" />
+
+        <!-- 5 Dakika -->
+        <Button
+            android:id="@+id/quickGame5MinButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/btn_style"
+            android:text="5 Dakika"
+            android:textColor="#fff" />
+
+        <!-- Genişletilmiş Oyun Başlığı -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Genişletilmiş Oyun"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- 12 Saat -->
+        <Button
+            android:id="@+id/extendedGame12HButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/btn_style"
+            android:text="12 Saat"
+            android:textColor="#fff" />
+
+        <!-- 24 Saat -->
+        <Button
+            android:id="@+id/extendedGame24HButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/btn_style"
+            android:text="24 Saat"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+</RelativeLayout>

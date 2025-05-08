@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue">
+
+    <!-- Süre Göstergesi -->
+    <RelativeLayout
+        android:id="@+id/timeContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_shape"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/timeRemaining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kalan Süre: 02:00"
+            android:textColor="#E74C3C"
+            android:textSize="18sp"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <!-- Oyun Tahtası -->
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gameBoard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timeContainer"
+        android:layout_marginTop="10dp"
+        android:background="#B0E0E6"
+        android:padding="8dp"
+        app:columnCount="15"
+        app:rowCount="15" />
+
+    <!-- Bilgi Alanı (Kullanıcı ve Rakip Puanları) -->
+    <RelativeLayout
+        android:id="@+id/infoArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gameBoard"
+        android:layout_marginTop="8dp"
+        android:padding="5dp">
+
+        <!-- Kullanıcı Bilgileri -->
+        <LinearLayout
+            android:id="@+id/userInfoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/score_background"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+            <ImageView
+                android:id="@+id/userIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/btn_star_big_on" />
+
+            <TextView
+                android:id="@+id/userInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="Kullanıcı | Puan: 0"
+                android:textColor="#2C3E50"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Kalan Harf Sayısı -->
+        <TextView
+            android:id="@+id/remainingLettersCount"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/letter_count_background"
+            android:gravity="center"
+            android:text="79"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/turnIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/remainingLettersCount"
+            android:layout_marginTop="2dp"
+            android:text="Sıra Sizde"
+            android:textColor="#4CAF50"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/opponentInfoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/score_background"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+            <TextView
+                android:id="@+id/opponentInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="Rakip | Puan: 0"
+                android:textColor="#2C3E50"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/opponentIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/btn_star_big_on" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Oyuncu Harfleri -->
+    <LinearLayout
+        android:id="@+id/playerTiles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/infoArea"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp" />
+
+    <!-- Joker Panel - ÖNEMLİ DEĞİŞİKLİK: Joker panelini harflerin altına taşıdık -->
+    <LinearLayout
+        android:id="@+id/jokerPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/playerTiles"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:visibility="visible">
+
+        <!-- Bölge Yasağı Jokeri -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginEnd="10dp">
+
+            <ImageButton
+                android:id="@+id/regionBanJoker"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:background="@drawable/joker_button_background"
+                android:src="@drawable/region_ban_icon"
+                android:contentDescription="Bölge Yasağı Jokeri" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bölge Yasağı"
+                android:textSize="10sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Harf Yasağı Jokeri -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginEnd="10dp">
+
+
+            <ImageButton
+                android:id="@+id/letterBanJoker"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:background="@drawable/joker_button_background"
+                android:src="@drawable/letter_ban_icon"
+                android:contentDescription="Harf Yasağı Jokeri" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Harf Yasağı"
+                android:textSize="10sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Ekstra Hamle Jokeri -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/extraMoveJoker"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:background="@drawable/joker_button_background"
+                android:src="@drawable/extra_move_icon"
+                android:contentDescription="Ekstra Hamle Jokeri" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ekstra Hamle"
+                android:textSize="10sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Aksiyon Butonları - ÖNEMLİ DEĞİŞİKLİK: Daha küçük ve altta -->
+    <LinearLayout
+        android:id="@+id/actionButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#411490"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:gravity="center">
+
+        <!-- Onay Butonu -->
+        <ImageButton
+            android:id="@+id/confirmButton"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/confirm_button_background"
+            android:contentDescription="Onayla"
+            android:src="@drawable/ic_play_arrow" />
+
+        <!-- Üç Nokta Menü Butonu -->
+        <ImageButton
+            android:id="@+id/menuButton"
+            android:layout_width="50dp"
+            android:layout_height="65dp"
+            android:layout_marginLeft="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_more_vert"
+            android:contentDescription="Menü" />
+    </LinearLayout>
+</RelativeLayout>

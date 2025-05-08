@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Arka plan olarak aynı resim -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/kelime_oyunu_image"
+        android:alpha="0.6"
+        android:scaleType="centerCrop" />
+
+    <!-- Sayfa Başlığı -->
+    <TextView
+        android:id="@+id/registerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Kayıt Ol"
+        android:textColor="#2C3E50"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <!-- Kayıt Formu -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Kullanıcı Adı -->
+        <EditText
+            android:id="@+id/usernameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kullanıcı Adı"
+            android:inputType="text"
+            android:padding="15dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="15dp" />
+
+        <!-- E-posta -->
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-posta"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="15dp" />
+
+        <!-- Şifre -->
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Şifre (En az 8 karakter, büyük/küçük harf ve rakam)"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="30dp" />
+
+        <!-- Kayıt Ol Butonu -->
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/btn_style"
+            android:text="Kayıt Ol"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+    <!-- Yükleme göstergesi overlay -->
+    <RelativeLayout
+        android:id="@+id/loadingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Lütfen bekleyin..."
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+    </RelativeLayout>
+</RelativeLayout>

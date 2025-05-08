@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4">
+
+    <ImageView
+        android:id="@+id/mykImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/kelime_oyunu_image"
+        android:alpha="0.6"
+        android:scaleType="centerCrop" />
+
+    <!-- Hoş Geldin Mesajı -->
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Hoş geldin, Oyuncu!"
+        android:textColor="#2C3E50"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Oyun Seçenekleri -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Yeni Oyun Butonu -->
+        <Button
+            android:id="@+id/newGameButton"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/btn_style"
+            android:text="Yeni Oyun"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+        <!-- Aktif Oyunlar Butonu -->
+        <Button
+            android:id="@+id/activeGamesButton"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/btn_style"
+            android:text="Aktif Oyunlar"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+        <!-- Biten Oyunlar Butonu -->
+        <Button
+            android:id="@+id/finishedGamesButton"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/btn_style"
+            android:text="Biten Oyunlar"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</RelativeLayout>

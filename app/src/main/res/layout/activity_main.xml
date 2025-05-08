@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4">
+
+    <!-- Arka plan olarak resim -->
+    <ImageView
+        android:id="@+id/myImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/kelime_oyunu_image"
+        android:alpha="0.6"
+        android:scaleType="centerCrop" />
+
+    <!-- Uygulama Başlığı -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Kelime Oyunu"
+        android:textColor="#2C3E50"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <!-- Giriş Yap Butonu -->
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/titleText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/btn_style"
+        android:text="Giriş Yap"
+        android:textColor="#fff" />
+
+    <!-- Aktivasyon Ol Butonu -->
+    <Button
+        android:id="@+id/activateButton"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/loginButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_style"
+        android:text="Kayıt Ol"
+        android:textColor="#fff" />
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="15"
+        android:rowCount="15">
+        <!-- 15x15'lik hücreler burada olacak -->
+    </GridLayout>
+
+
+</RelativeLayout>

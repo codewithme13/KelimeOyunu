@@ -1,0 +1,8 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#33F44336"/> <!-- Yarı saydam kırmızı -->
+    <stroke
+        android:width="2dp"
+        android:color="#F44336" /> <!-- Koyu kırmızı kenar -->
+    <corners android:radius="4dp" />
+</shape>

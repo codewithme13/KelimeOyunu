@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="button_color_default">#3498db</color>
+    <color name="button_color_pressed">#2980b9</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="dark_yellow">#F3BF0B</color>
+    <!-- Oyun Tahtası Renkleri -->
+    <color name="light_blue">#E6F7FF</color>
+    <color name="dark_blue">#1E3A5F</color>
+    <color name="blue_accent">#3498DB</color>
+    <color name="text_dark">#2C3E50</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#2196F3</color>
+    <color name="red">#F44336</color>
+    <color name="green">#4CAF50</color>
+    <color name="brown">#795548</color>
+    <color name="win_green">#4CAF50</color>
+    <color name="lose_red">#F44336</color>
+</resources>
